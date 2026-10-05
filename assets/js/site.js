@@ -78,6 +78,7 @@ document.querySelectorAll('form.cbox[action*="web3forms.com"]').forEach(form=>{
 // Cost prima consultatie: 500 -> 100 (incetineste/pauza) -> coboara animat la 0
 (function(){
   var el=document.querySelector('.cost-count'); if(!el) return;
+  el.textContent='500'; // HTML-ul static spune 0 (pentru crawlere/LLM); animatia porneste de la 500
   var done=false;
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
     if(e.isIntersecting && !done){
